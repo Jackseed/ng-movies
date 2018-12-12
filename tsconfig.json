@@ -19,12 +19,8 @@
       "dom"
     ],
     "paths": {
-      "movie": [
-        "dist/movie"
-      ],
-      "movie/*": [
-        "dist/movie/*"
-      ]
+      "movie": ["dist/movie", "projects/movie/src"],
+      "movie/*": ["dist/movie/*", "projects/movie/src"]
     }
   }
 }
