@@ -8,7 +8,6 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 import { environment } from 'projects/dashboard/src/environments/environment';
 import { CreationComponent } from './creation/creation.component';
-import { MoviesComponent } from './movies/movies.component';
 import { AppRoutingModule } from './app-routing.module';
 
 
@@ -21,7 +20,6 @@ const Akita = environment.production
   declarations: [
     AppComponent,
     CreationComponent,
-    MoviesComponent
   ],
   imports: [
     BrowserModule,
