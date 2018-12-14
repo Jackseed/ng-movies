@@ -23,20 +23,15 @@ export class CreationComponent {
 
   genres = ['Comedy', 'Drama', 'Horror', 'Fantasy', 'Science fiction'];
 
-  private genId(): number {
-    return this.query.getCount() + 1;
-  }
-
   private addMovie() {
-    this.service.add({
-      id: this.genId(),
-      title: this.creationForm.controls.title.value,
-      productionCompany: this.creationForm.controls.productionCompany.value,
-      director: this.creationForm.controls.director.value,
-      actors: this.creationForm.controls.actors.value,
-      genre: this.creationForm.controls.genre.value,
-      synopsis: this.creationForm.controls.synopsis.value
-    });
+    this.service.addMovie(
+      this.creationForm.controls.title.value,
+      this.creationForm.controls.productionCompany.value,
+      this.creationForm.controls.director.value,
+      this.creationForm.controls.actors.value,
+      this.creationForm.controls.genre.value,
+      this.creationForm.controls.synopsis.value
+    );
   }
 
   constructor(

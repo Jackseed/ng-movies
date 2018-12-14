@@ -10,7 +10,7 @@ export interface Movie {
   synopsis: string;
 }
 
-export function createInitialMovie({
+export function createMovie({
   id, title, productionCompany, director, actors, genre, synopsis
 }: Partial<Movie>) {
   return {
