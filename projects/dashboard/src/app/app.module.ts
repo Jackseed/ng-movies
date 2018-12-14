@@ -6,9 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UiModule } from '../../../movie/src';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
-import { environment } from 'projects/dashboard/src/environments/environment';
+import { environment } from '../environments/environment';
 import { CreationComponent } from './creation/creation.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
 const Akita = environment.production
@@ -26,7 +29,10 @@ const Akita = environment.production
     BrowserAnimationsModule,
     UiModule,
     ...Akita,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

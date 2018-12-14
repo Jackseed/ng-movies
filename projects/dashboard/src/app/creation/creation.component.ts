@@ -37,7 +37,6 @@ export class CreationComponent {
       genre: this.creationForm.controls.genre.value,
       synopsis: this.creationForm.controls.synopsis.value
     });
-    console.log(this.genId());
   }
 
   constructor(
