@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../+state/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'movie-login',
@@ -8,9 +9,15 @@ import { AuthService } from '../+state/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(
+    public auth: AuthService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }
 
+  btnClick() {
+    this.router.navigateByUrl('/new');
+  }
 }

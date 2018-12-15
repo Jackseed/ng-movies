@@ -11,6 +11,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthModule } from 'projects/auth/auth.module';
+import { AuthGuard } from 'projects/auth/auth.guard';
 
 const Akita = environment.production
 ? []
@@ -30,7 +31,7 @@ const Akita = environment.production
     AngularFireAuthModule,
     AuthModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
