@@ -12,7 +12,7 @@ export interface Movie {
 
 export function createMovie({
   id, title, productionCompany, director, actors, genre, synopsis
-}: Partial<Movie>) {
+}): Movie {
   return {
     id,
     title,
@@ -21,5 +21,5 @@ export function createMovie({
     actors,
     genre,
     synopsis,
-  } as Movie;
+  };
 }
