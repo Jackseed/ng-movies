@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { CoreModule } from '../../../movie/src';
 
 const Akita = environment.production
 ? []
@@ -27,6 +28,7 @@ const Akita = environment.production
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
