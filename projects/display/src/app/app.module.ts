@@ -12,6 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthModule } from 'projects/auth/auth.module';
 import { AuthGuard } from 'projects/auth/auth.guard';
+import { CanWriteGuard } from 'projects/auth/can-write.guard';
 
 const Akita = environment.production
 ? []
@@ -31,7 +32,7 @@ const Akita = environment.production
     AngularFireAuthModule,
     AuthModule,
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, CanWriteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
