@@ -16,7 +16,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthModule } from 'projects/auth/auth.module';
 import { AuthGuard } from 'projects/auth/auth.guard';
 import { CanWriteGuard } from 'projects/auth/can-write.guard';
+
 import { AppModule as DisplayModule} from 'projects/display/src/app/app.module';
+
 
 const Akita = environment.production
 ? []

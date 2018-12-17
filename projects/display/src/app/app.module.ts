@@ -13,7 +13,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthModule } from 'projects/auth/auth.module';
 import { AuthGuard } from 'projects/auth/auth.guard';
 import { CanWriteGuard } from 'projects/auth/can-write.guard';
+
 import { MovieSearchComponent } from './movie-search/movie-search.component';
+
 
 const Akita = environment.production
 ? []
@@ -34,9 +36,11 @@ const Akita = environment.production
     AngularFireAuthModule,
     AuthModule,
   ],
+
   exports: [
     MovieSearchComponent
   ],
+
   providers: [AuthGuard, CanWriteGuard],
   bootstrap: [AppComponent]
 })
