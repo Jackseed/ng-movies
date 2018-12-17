@@ -2,15 +2,19 @@ import { Injectable } from '@angular/core';
 import { MovieStore } from './movie.store';
 import { Movie, createMovie } from './movie.model';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Injectable({ providedIn: 'root' })
+
 export class MovieService {
 
   moviesCollection: AngularFirestoreCollection;
 
   constructor(
     private afs: AngularFirestore,
-    private movieStore: MovieStore) {
+    private movieStore: MovieStore,
+    private db: AngularFireDatabase
+    ) {
       this.moviesCollection = afs.collection('movies');
       this.fetch();
   }
@@ -35,10 +39,21 @@ export class MovieService {
     });
   }
 
+  search(searchValue) {
+  return this.afs.collection('movies', ref => ref
+    .orderBy('title')
+    .startAt(searchValue.toLowerCase())
+    .endAt(searchValue.toLowerCase() + '\uf8ff')
+    .limit(10))
+    .valueChanges();
+  }
+
   updateMovie(id: string, title: string, productionCompany: string, director: string, actors: string, genre: string, synopsis: string) {
     this.moviesCollection.doc(id).update({ title, productionCompany, director, actors, genre, synopsis }).then((res) => {
       this.movieStore.update(id, { title, productionCompany, director, actors, genre, synopsis });
     });
   }
+
+
 
 }
