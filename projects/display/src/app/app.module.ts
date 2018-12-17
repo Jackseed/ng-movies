@@ -12,6 +12,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthModule } from 'projects/auth/auth.module';
 import { AuthGuard } from 'projects/auth/auth.guard';
+import { CanWriteGuard } from 'projects/auth/can-write.guard';
+import { MovieSearchComponent } from './movie-search/movie-search.component';
 
 const Akita = environment.production
 ? []
@@ -19,7 +21,8 @@ const Akita = environment.production
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MovieSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,10 @@ const Akita = environment.production
     AngularFireAuthModule,
     AuthModule,
   ],
-  providers: [AuthGuard],
+  exports: [
+    MovieSearchComponent
+  ],
+  providers: [AuthGuard, CanWriteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,7 +14,7 @@ import { switchMap} from 'rxjs/operators';
 export class AuthService {
 
   userCollection: AngularFirestoreCollection;
-  user: Observable<User>;
+  user$: Observable<User>;
 
   constructor(
     private authStore: AuthStore,
@@ -25,7 +25,7 @@ export class AuthService {
       this.fetch();
 
       //// Get auth data, then get firestore user document || null
-      this.user = this.afAuth.authState.pipe(
+      this.user$ = this.afAuth.authState.pipe(
         switchMap(user => {
           if (user) {
             return this.userCollection.doc<User>(user.uid).valueChanges();
@@ -64,6 +64,9 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
+      roles: {
+        viewer: true
+      },
       photoURL: user.photoURL
     };
 
@@ -76,6 +79,39 @@ export class AuthService {
     this.afAuth.auth.signOut().then(() => {
         this.router.navigate(['/']);
     });
+  }
+
+  ///// Role-based Authorization //////
+
+  canRead(user: User): boolean {
+    const allowed = ['admin', 'editor', 'viewer'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  canEdit(user: User): boolean {
+    const allowed = ['admin', 'editor'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  canCreate(user: User): boolean {
+    const allowed = ['admin', 'editor'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  canDelete(user: User): boolean {
+    const allowed = ['admin'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  // determines if user has matching role
+  private checkAuthorization(user: User, allowedRoles: string[]): boolean {
+    if (!user) { return false; }
+    for (const role of allowedRoles) {
+      if ( user.roles[role] ) {
+        return true;
+      }
+    }
+    return false;
   }
 
 }
