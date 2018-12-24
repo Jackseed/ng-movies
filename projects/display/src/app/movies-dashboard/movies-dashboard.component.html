@@ -1,0 +1,34 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let movie of movies$ | async">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{movie.title}}
+            <button mat-icon-button class="edit-button">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button class="delete-button">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-card-title>
+          <mat-card-subtitle>Réalisé par {{movie.director}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div class="row">
+            <div class="col">
+              {{movie.synopsis}}
+            </div>
+            <div class="col">
+              poster here
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-footer class="dashboard-card-footer">
+          Créé par ...
+        </mat-card-footer>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -30,7 +30,9 @@ export class CreationComponent {
       this.creationForm.controls.director.value,
       this.creationForm.controls.actors.value,
       this.creationForm.controls.genre.value,
-      this.creationForm.controls.synopsis.value
+      this.creationForm.controls.synopsis.value,
+      this.creationForm.controls.owner.value,
+      this.creationForm.controls.poster.value
     );
   }
 

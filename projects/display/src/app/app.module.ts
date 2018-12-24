@@ -15,6 +15,10 @@ import { AuthGuard } from 'projects/auth/auth.guard';
 import { CanWriteGuard } from 'projects/auth/can-write.guard';
 
 import { MovieSearchComponent } from './movie-search/movie-search.component';
+import { MoviesDashboardComponent } from './movies-dashboard/movies-dashboard.component';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 const Akita = environment.production
@@ -24,7 +28,8 @@ const Akita = environment.production
 @NgModule({
   declarations: [
     AppComponent,
-    MovieSearchComponent
+    MovieSearchComponent,
+    MoviesDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,14 @@ const Akita = environment.production
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     AuthModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule,
   ],
 
   exports: [

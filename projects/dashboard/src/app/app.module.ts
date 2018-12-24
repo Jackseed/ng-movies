@@ -18,6 +18,7 @@ import { AuthGuard } from 'projects/auth/auth.guard';
 import { CanWriteGuard } from 'projects/auth/can-write.guard';
 
 import { AppModule as DisplayModule} from 'projects/display/src/app/app.module';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 
 const Akita = environment.production
@@ -39,6 +40,7 @@ const Akita = environment.production
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
     AuthModule,
     DisplayModule,
     CommonModule

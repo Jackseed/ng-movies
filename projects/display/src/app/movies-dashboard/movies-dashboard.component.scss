@@ -1,0 +1,51 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.edit-button {
+  position: absolute;
+  top: 5px;
+  right: 40px;
+}
+
+.delete-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  padding-left: 20px;
+  text-align: justify;
+}
+
+.dashboard-card-footer {
+  position: absolute;
+  bottom: 30px;
+  left: 40px;
+  color: gray;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+

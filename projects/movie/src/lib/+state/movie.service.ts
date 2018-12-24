@@ -25,9 +25,10 @@ export class MovieService {
     });
   }
 
-  addMovie(title: string, productionCompany: string, director: string, actors: string, genre: string, synopsis: string) {
+  addMovie(title: string, productionCompany: string, director: string, 
+    actors: string, genre: string, synopsis: string, owner: string, poster: string) {
     const id = this.afs.createId();
-    const movie = { id, title, productionCompany, director, actors, genre, synopsis };
+    const movie = { id, title, productionCompany, director, actors, genre, synopsis, owner, poster };
     this.moviesCollection.doc(id).set(movie).then(res => {
       this.movieStore.add(createMovie(movie));
     });

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
-import { Movie, MovieService, MovieQuery } from 'ng-movies/projects/movie/src/lib/+state';
 import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({

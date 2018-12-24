@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { Movie, MovieQuery, MovieService } from 'ng-movies/projects/movie/src/lib/+state';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'movie-movies',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss'],
+  selector: 'movie-movies-dashboard',
+  templateUrl: './movies-dashboard.component.html',
+  styleUrls: ['./movies-dashboard.component.scss'],
 })
-export class MoviesComponent {
-  /** Based on the screen size, switch from standard to one column per row */
+export class MoviesDashboardComponent {
+
+  movies$: Observable<Movie[]>;
+
+  /** Based on the screen size, switch from standard to one column per row 
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -29,5 +34,13 @@ export class MoviesComponent {
     })
   );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  */
+
+  constructor(
+    // private breakpointObserver: BreakpointObserver,
+    private movieService: MovieService,
+    private movieQuery: MovieQuery
+  ) {
+    this.movieService.fetch();
+    this.movies$ = this.movieQuery.selectAll();  }
 }

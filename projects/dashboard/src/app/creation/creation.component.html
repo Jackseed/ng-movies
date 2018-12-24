@@ -64,6 +64,20 @@
           </mat-form-field>
         </div>
       </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput #owner placeholder="Owner" type="string" formControlName="owner"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <textarea matInput #poster placeholder="Poster" type="string" formControlName="poster"></textarea>
+          </mat-form-field>
+        </div>
+      </div>      
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary" type="submit">Submit</button>

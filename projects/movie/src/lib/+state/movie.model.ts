@@ -8,10 +8,12 @@ export interface Movie {
   actors: string;
   genre: string;
   synopsis: string;
+  owner: string;
+  poster: string;
 }
 
 export function createMovie({
-  id, title, productionCompany, director, actors, genre, synopsis
+  id, title, productionCompany, director, actors, genre, synopsis, owner, poster
 }): Movie {
   return {
     id,
@@ -21,5 +23,7 @@ export function createMovie({
     actors,
     genre,
     synopsis,
+    owner,
+    poster
   };
 }
