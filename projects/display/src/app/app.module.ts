@@ -19,6 +19,8 @@ import { MoviesDashboardComponent } from './movies-dashboard/movies-dashboard.co
 import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { MoviePageComponent } from './movie-page/movie-page.component';
+import { RouterModule } from '@angular/router';
 
 
 const Akita = environment.production
@@ -29,7 +31,8 @@ const Akita = environment.production
   declarations: [
     AppComponent,
     MovieSearchComponent,
-    MoviesDashboardComponent
+    MoviesDashboardComponent,
+    MoviePageComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ const Akita = environment.production
     MatIconModule,
     MatButtonModule,
     LayoutModule,
+    RouterModule,
   ],
 
   exports: [

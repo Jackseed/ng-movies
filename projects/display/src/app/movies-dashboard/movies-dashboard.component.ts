@@ -42,5 +42,6 @@ export class MoviesDashboardComponent {
     private movieQuery: MovieQuery
   ) {
     this.movieService.fetch();
-    this.movies$ = this.movieQuery.selectAll();  }
+    this.movies$ = this.movieQuery.selectAll();
+  }
 }

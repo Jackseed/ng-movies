@@ -19,6 +19,7 @@ import { CanWriteGuard } from 'projects/auth/can-write.guard';
 
 import { AppModule as DisplayModule} from 'projects/display/src/app/app.module';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { RouterModule } from '@angular/router';
 
 
 const Akita = environment.production
@@ -43,7 +44,8 @@ const Akita = environment.production
     AngularFireDatabaseModule,
     AuthModule,
     DisplayModule,
-    CommonModule
+    CommonModule,
+    RouterModule,
   ],
   providers: [AuthGuard, CanWriteGuard],
   bootstrap: [AppComponent]
