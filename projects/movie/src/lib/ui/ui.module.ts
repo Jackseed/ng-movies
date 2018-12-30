@@ -9,6 +9,7 @@ import {
   MatGridListModule,
   MatIconModule,
   MatMenuModule,
+  MatToolbarModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,7 +28,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatMenuModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    MatToolbarModule
   ],
   exports: [
     NoopAnimationsModule,
@@ -41,7 +43,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MatIconModule,
     MatMenuModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    MatToolbarModule
   ]
 })
 export class UiModule { }

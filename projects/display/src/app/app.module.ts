@@ -21,6 +21,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { MoviePageComponent } from './movie-page/movie-page.component';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 const Akita = environment.production
@@ -32,7 +33,8 @@ const Akita = environment.production
     AppComponent,
     MovieSearchComponent,
     MoviesDashboardComponent,
-    MoviePageComponent
+    MoviePageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

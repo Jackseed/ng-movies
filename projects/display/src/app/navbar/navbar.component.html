@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <span>METROPOLIS</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <img src="https://avatars0.githubusercontent.com/u/14964443?s=40&amp;v=4" height="20" width="20">
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>power_settings_new</mat-icon>
+      <span>Log out</span>
+     </button>
+  </mat-menu>
+</mat-toolbar>
+
