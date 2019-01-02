@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService, User } from 'projects/auth/+state';
 
 @Component({
   selector: 'movie-navbar',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+
+  constructor(
+    public auth: AuthService
+  ) { }
 
   ngOnInit() {
+    this.auth.user$.subscribe(user => this.user = user);
   }
 
 }
