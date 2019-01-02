@@ -22,6 +22,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { MoviePageComponent } from './movie-page/movie-page.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 
 const Akita = environment.production
@@ -34,7 +35,8 @@ const Akita = environment.production
     MovieSearchComponent,
     MoviesDashboardComponent,
     MoviePageComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserSettingsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <span>METROPOLIS</span>
+    <a routerLink="/dashboard">METROPOLIS</a>
 
   <!-- This fills the remaining space of the current row -->
   <span class="fill-remaining-space"></span>
@@ -8,7 +8,7 @@
     <img [src]="user.photoURL" height="30" width="30">
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <button mat-menu-item (click)="goToSettings()">
       <mat-icon>settings</mat-icon>
       <span>Settings</span>
     </button>

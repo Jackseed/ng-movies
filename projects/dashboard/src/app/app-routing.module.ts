@@ -8,6 +8,7 @@ import { MovieSearchComponent } from 'projects/display/src/app/movie-search/movi
 import { MoviesDashboardComponent } from 'projects/display/src/app/movies-dashboard/movies-dashboard.component';
 import { MoviePageComponent } from 'projects/display/src/app/movie-page/movie-page.component';
 import { NavbarComponent } from 'projects/display/src/app/navbar/navbar.component';
+import { UserSettingsComponent } from 'projects/display/src/app/user-settings/user-settings.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'search', component: MovieSearchComponent },
   { path: 'dashboard', component: MoviesDashboardComponent },
   { path: 'movie/:id', component: MoviePageComponent },
-  { path: 'navbar', component: NavbarComponent }
+  { path: 'navbar', component: NavbarComponent },
+  { path: 'settings', component: UserSettingsComponent }
 ];
 
 @NgModule({
