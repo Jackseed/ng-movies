@@ -1,5 +1,31 @@
 <movie-navbar></movie-navbar>
-<p>NAME: {{ user.displayName }}</p>
-<p>EMAIL: {{ user.email }}</p>
-<p>PICTURE:</p><img  [src]="user.photoURL">
-<p>ROLES</p>
+
+
+<form class="user-form">
+  <mat-form-field class="user-form-full-width">
+    <input matInput placeholder="Name" value="{{user.displayName}}">
+  </mat-form-field>
+  <mat-form-field class="user-form-full-width">
+    <input matInput placeholder="Email" value="{{user.email}}">
+  </mat-form-field>
+
+  <mat-slide-toggle
+    color="primary"
+    checked="{{user.roles.viewer}}">
+    Viewer
+  </mat-slide-toggle>
+  <mat-slide-toggle
+    color="primary"
+    checked="{{user.roles.editor}}">
+    Editor
+  </mat-slide-toggle>
+  <mat-slide-toggle
+    color="primary"
+    checked="{{user.roles.admin}}">
+    Admin
+  </mat-slide-toggle>
+
+  <p>PICTURE:</p><img  [src]="user.photoURL">
+
+  <button mat-raised-button color="primary">Save</button>
+</form>
