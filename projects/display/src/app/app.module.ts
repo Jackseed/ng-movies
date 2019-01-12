@@ -10,7 +10,6 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AuthModule } from 'projects/auth/auth.module';
 import { AuthGuard } from 'projects/auth/auth.guard';
 import { CanWriteGuard } from 'projects/auth/can-write.guard';
 
@@ -23,6 +22,7 @@ import { MoviePageComponent } from './movie-page/movie-page.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { CommonModule } from '@angular/common';
 
 
 const Akita = environment.production
@@ -47,7 +47,6 @@ const Akita = environment.production
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AuthModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
@@ -55,10 +54,12 @@ const Akita = environment.production
     MatButtonModule,
     LayoutModule,
     RouterModule,
+    CommonModule
   ],
 
   exports: [
-    MovieSearchComponent
+    MovieSearchComponent,
+    NavbarComponent
   ],
 
   providers: [AuthGuard, CanWriteGuard],

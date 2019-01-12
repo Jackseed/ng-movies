@@ -18,4 +18,11 @@ export class UserSettingsComponent implements OnInit {
     this.auth.user$.subscribe(user => this.user = user);
   }
 
+  editMovie() {
+    if (this.auth.canEdit(this.user)) {
+      alert('Congratz you have the good accreditation.');
+    } else {
+      console.error('you are not allowed to do that!');
+    }
+  }
 }

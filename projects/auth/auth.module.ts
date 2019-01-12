@@ -4,13 +4,15 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './+state/auth.service';
 import { LoginComponent } from './login/login.component';
 import { CommonModule } from '@angular/common';
+import { AppModule as DisplayModule} from 'projects/display/src/app/app.module';
 
 @NgModule({
   declarations: [LoginComponent],
   imports: [
     AngularFireAuthModule,
     AngularFirestoreModule,
-    CommonModule
+    CommonModule,
+    DisplayModule
   ],
   exports: [
     LoginComponent
@@ -18,3 +20,5 @@ import { CommonModule } from '@angular/common';
   providers: [AuthService]
 })
 export class AuthModule { }
+
+

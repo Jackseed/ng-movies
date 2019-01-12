@@ -29,3 +29,6 @@
 
   <button mat-raised-button color="primary">Save</button>
 </form>
+
+<button (click)="editMovie()">Edit movie</button>
+<span *ngIf="auth.canDelete(user)">Only admins see this</span>

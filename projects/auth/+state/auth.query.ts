@@ -9,5 +9,4 @@ export class AuthQuery extends QueryEntity<AuthState, User> {
   constructor(protected store: AuthStore) {
     super(store);
   }
-
 }

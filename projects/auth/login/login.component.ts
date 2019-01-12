@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../+state/auth.service';
 import { Router } from '@angular/router';
 import { User } from '../+state/auth.model';
+import { AuthQuery } from '../+state';
 
 @Component({
   selector: 'movie-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     public auth: AuthService,
+    private query: AuthQuery,
     private router: Router
     ) { }
 
@@ -25,11 +27,11 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl('/new');
   }
 
-  editMovie() {
-    if (this.auth.canEdit(this.user)) {
-      alert('Congratz you have the good accreditation.');
-    } else {
-      console.error('you are not allowed to do that!');
-    }
+  googleLogin() {
+    this.auth.googleLogin().then(res => {
+      this.router.navigateByUrl('/dashboard');
+    });
   }
+
+
 }

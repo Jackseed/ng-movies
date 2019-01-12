@@ -14,12 +14,13 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AuthModule } from 'projects/auth/auth.module';
-import { AuthGuard } from 'projects/auth/auth.guard';
+
 import { CanWriteGuard } from 'projects/auth/can-write.guard';
 
 import { AppModule as DisplayModule} from 'projects/display/src/app/app.module';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from 'projects/auth/auth.guard';
 
 
 const Akita = environment.production
